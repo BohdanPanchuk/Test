@@ -1,0 +1,347 @@
+﻿@model Estafeta_TestTask.Models.User
+@{
+    ViewBag.Title = "Index Page";
+}
+
+<!-- Top line -->
+<div style="background-color : lightblue">
+    <h4>Logistics Online</h4>
+    <input type="text" style="background-color : aliceblue" placeholder="Search" />
+    @if (Request.IsAuthenticated)
+    {
+        <a href="/Home/Logout" style="">Sign Out</a>
+    }
+</div>
+
+<!-- Row -->
+<div class="container-fluid">
+    <!-- Colunm 1 -->
+    <div class="col-md-2">
+        <!-- Application for transportation -->
+        <div style="background-color : cornflowerblue; color : white">
+            <p>Заявка на перевозку № 15-08</p>
+            <p>Новая</p>
+
+            <p>Заказчик:<br />Альфа Транс Груп, ТОВ</p>
+            <hr />
+            <p>Контактное лицо:<br /> Данилевский Н. Д.<br /> +30 (063) 525 03 02</p>
+            <hr />
+            <p>Cумма по заявке:<br /> По курсу НБУ на 26.08.15:<br /> USD: 2 900<br /> UAH: 63 800</p>
+            <hr />
+            <p>Договор: LO-15-09</p>
+            <hr />
+            <p>Статус оплаты: не оплачена</p>
+        </div>
+
+        <!-- Comments on the application -->
+        <div>
+            <p>Комментарии к заявке:</p>
+            <hr />
+            <!-- First comment -->
+            <div>
+                <p>
+                    Борсучок О.П.  27.06.2015 7:35<br />
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </p>
+            </div>
+            <!-- Second comment -->
+            <div>
+                <p>
+                    Гаркуши И.В.  27.06.2015 7:35<br />
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standart dummy text ever since the 1500s.
+                </p>
+            </div>
+            <!-- Third comment -->
+            <div>
+                <p>
+                    Борсучок О.П.  27.06.2015 7:35<br />
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standart dummy text ever since the 1500s.
+                </p>
+            </div>
+
+            <textarea></textarea>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </div>
+    </div>
+
+    <div class="col-md-10">
+        <!-- Navigation -->
+        <!-- Information about the cargo; Completed applications; Payment and invoices -->
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="#">Информация о грузе</a>
+            </li>
+            <li><a href="#">Выполненные заявки</a></li>
+            <li><a href="#">Оплата и счета</a></li>
+        </ul>
+
+        <!-- Loading 1 (Погрузка 1) -->
+        <button data-toggle="collapse" data-target="#collapse1" class="btn btn-primary; display-block">Погрузка 1</button>
+
+        <div id="collapse1" class="collapse">
+            <div class="col-md-3">
+                <table>
+                    <tr>
+                        <td align="left"><small>Адрес погрузки:</small></td>
+                        <td align="left"><small>ул. Соборная 4, Винница</small></td>
+                    </tr>
+                    <tr>
+                        <td align="left"><small>План. дата погрузки:</small></td>
+                        <td align="left"><small>26.08.15 15:00</small></td>
+                    </tr>
+                    <tr>
+                        <td align="left"><small>Грузоотправитель:</small></td>
+                        <td align="left"><small>ТОВ "Вінпроммаш"</small></td>
+                    </tr>
+                    <tr>
+                        <td align="left"><small>Контактное лицо:</small></td>
+                        <td align="left"><small>Данилевский Н. Д.</small></td>
+                    </tr>
+                    <tr>
+                        <td align="left"><small>Телефон:</small></td>
+                        <td align="left"><small>+38 (097) 112 98 14</small></td>
+                    </tr>
+                    <tr>
+                        <td align="left"><small>Предоставление документов:</small></td>
+                        <td align="left"><small>Грузополучатель: CMR/TTH Инвойс</small></td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="col-md-9">
+                <div>
+                    <table class="table table-striped">
+                        <!-- Header -->
+                        <tr>
+                            <th style="text-align:center">Описание груза</th>
+                            <th style="text-align:center">Особенности</th>
+                            <th style="text-align:center">Упаковка</th>
+                            <th style="text-align:center">Вес (кг)</th>
+                            <th style="text-align:center">Обьем (м3)</th>
+                            <th style="text-align:center">Погрузка</th>
+                            <th style="text-align:center">Погружено, кол.</th>
+                        </tr>
+                        <!-- Row 1 -->
+                        <tr>
+                            <td align="center">Мешки цемента</td>
+                            <td align="center">грязный</td>
+                            <td align="center">мешок без палеты</td>
+                            <td align="center">1000</td>
+                            <td align="center">0.95</td>
+                            <td align="center">Задняя</td>
+                            <td align="center">50</td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr>
+                            <td align="center">Крановые блоки</td>
+                            <td align="center">опасный<br />(Класс q)<br />ценный<br />(5000 EUR)<br />негабарит<br />(H=2 W=1 L=15)</td>
+                            <td align="center">не упакован<br />Fin-пакет</td>
+                            <td align="center">5000</td>
+                            <td align="center">2.8</td>
+                            <td align="center">Верхняя</td>
+                            <td align="center">12</td>
+                        </tr>
+                        <!-- Row 3 -->
+                        <tr>
+                            <td align="center"></td>
+                            <td align="center"></td>
+                            <td align="center"></td>
+                            <td align="center">Всего: 6000 кг</td>
+                            <td align="center">3.75 м3</td>
+                            <td align="center"></td>
+                            <td align="center"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading 2 (Погрузка 2) -->
+        <button data-toggle="collapse" data-target="#collapse2" class="btn btn-primary; display-block">Погрузка 2</button>
+
+        <div id="collapse2" class="collapse">
+            <div class="col-md-3">
+                <table>
+                    <tr>
+                        <td align="left"><small>Адрес погрузки:</small></td>
+                        <td align="left"><small>ул. Соборная 4, Винница</small></td>
+                    </tr>
+                    <tr>
+                        <td align="left"><small>План. дата погрузки:</small></td>
+                        <td align="left"><small>26.08.15 15:00</small></td>
+                    </tr>
+                    <tr>
+                        <td align="left"><small>Грузоотправитель:</small></td>
+                        <td align="left"><small>ТОВ "Вінпроммаш"</small></td>
+                    </tr>
+                    <tr>
+                        <td align="left"><small>Предоставление документов:</small></td>
+                        <td align="left"><small>Грузополучатель: CMR/TTH Инвойс</small></td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="col-md-9">
+                <div>
+                    <table class="table table-striped">
+                        <!-- Header -->
+                        <tr>
+                            <th style="text-align:center">Описание груза</th>
+                            <th style="text-align:center">Особенности</th>
+                            <th style="text-align:center">Упаковка</th>
+                            <th style="text-align:center">Вес (кг)</th>
+                            <th style="text-align:center">Обьем (м3)</th>
+                            <th style="text-align:center">Погрузка</th>
+                            <th style="text-align:center">Погружено, кол.</th>
+                        </tr>
+                        <!-- Row 1 -->
+                        <tr>
+                            <td align="center">Нарезные стержни</td>
+                            <td align="center"></td>
+                            <td align="center">коробка без палеты</td>
+                            <td align="center">400</td>
+                            <td align="center">2.25</td>
+                            <td align="center">Задняя</td>
+                            <td align="center">50</td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr>
+                            <td align="center"></td>
+                            <td align="center"></td>
+                            <td align="center"></td>
+                            <td align="center">Всего: 6000 кг</td>
+                            <td align="center">3.75 м3</td>
+                            <td align="center"></td>
+                            <td align="center"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Unloading 1 (Выгрузка 1) -->
+        <button data-toggle="collapse" data-target="#collapse3" class="btn btn-primary; display-block">Выгрузка 1</button>
+
+        <div id="collapse3" class="collapse">
+            <div class="col-md-3">
+                <table>
+                    <tr>
+                        <td align="left"><small>Адрес погрузки:</small></td>
+                        <td align="left"><small>ул. Соборная 4, Винница</small></td>
+                    </tr>
+                    <tr>
+                        <td align="left"><small>План. дата погрузки:</small></td>
+                        <td align="left"><small>26.08.15 15:00</small></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-md-9">
+                <div>
+                    <table class="table table-striped">
+                        <!-- Header -->
+                        <tr>
+                            <th style="text-align:center">Описание груза</th>
+                            <th style="text-align:center">Особенности</th>
+                            <th style="text-align:center">Упаковка</th>
+                            <th style="text-align:center">Вес (кг)</th>
+                            <th style="text-align:center">Обьем (м3)</th>
+                            <th style="text-align:center">Погрузка</th>
+                            <th style="text-align:center">Погружено, кол.</th>
+                        </tr>
+                        <!-- Row 1 -->
+                        <tr>
+                            <td align="center">Мешки цемента</td>
+                            <td align="center">грязный</td>
+                            <td align="center">мешок без палеты</td>
+                            <td align="center">1000</td>
+                            <td align="center">0.95</td>
+                            <td align="center">Задняя</td>
+                            <td align="center">50</td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr>
+                            <td align="center">Крановые блоки</td>
+                            <td align="center">опасный<br />(Класс q)<br />ценный<br />(5000 EUR)<br />негабарит<br />(H=2 W=1 L=15)</td>
+                            <td align="center">не упакован<br />Fin-пакет</td>
+                            <td align="center">5000</td>
+                            <td align="center">2.8</td>
+                            <td align="center">Верхняя</td>
+                            <td align="center">12</td>
+                        </tr>
+                        <!-- Row 3 -->
+                        <tr>
+                            <td align="center"></td>
+                            <td align="center"></td>
+                            <td align="center"></td>
+                            <td align="center">Всего: 6000 кг</td>
+                            <td align="center">3.75 м3</td>
+                            <td align="center"></td>
+                            <td align="center"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Unloading 2 (Выгрузка 2) -->
+        <button data-toggle="collapse" data-target="#collapse4" class="btn btn-primary; display-block">Выгрузка 2</button>
+
+        <div id="collapse4" class="collapse">
+            <div class="col-md-3">
+                <table>
+                    <tr>
+                        <td align="left"><small>Адрес погрузки:</small></td>
+                        <td align="left"><small>ул. Соборная 4, Винница</small></td>
+                    </tr>
+                    <tr>
+                        <td align="left"><small>План. дата погрузки:</small></td>
+                        <td align="left"><small>26.08.15 15:00</small></td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="col-md-9">
+                <div>
+                    <table class="table table-striped">
+                        <!-- Header -->
+                        <tr>
+                            <th style="text-align:center">Описание груза</th>
+                            <th style="text-align:center">Особенности</th>
+                            <th style="text-align:center">Упаковка</th>
+                            <th style="text-align:center">Вес (кг)</th>
+                            <th style="text-align:center">Обьем (м3)</th>
+                            <th style="text-align:center">Погрузка</th>
+                            <th style="text-align:center">Погружено, кол.</th>
+                        </tr>
+                        <!-- Row 1 -->
+                        <tr>
+                            <td align="center">Нарезные стержни</td>
+                            <td align="center"></td>
+                            <td align="center">коробка без палеты</td>
+                            <td align="center">400</td>
+                            <td align="center">2.25</td>
+                            <td align="center">Задняя</td>
+                            <td align="center">50</td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr>
+                            <td align="center"></td>
+                            <td align="center"></td>
+                            <td align="center"></td>
+                            <td align="center">Всего: 6000 кг</td>
+                            <td align="center">3.75 м3</td>
+                            <td align="center"></td>
+                            <td align="center"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
